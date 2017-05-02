@@ -1,21 +1,21 @@
 <?php
 
-namespace blog\Http\Controllers;
+namespace Blog\Http\Controllers;
 
-use blog\Http\Requests\Post\Create;
-use blog\Http\Requests\Post\Edit;
-use blog\Http\Requests\Post\Index;
-use blog\Http\Requests\Post\Show;
-use blog\Http\Requests\Post\Store;
-use blog\Http\Requests\Post\Update;
+use Blog\Http\Requests\Post\Create;
+use Blog\Http\Requests\Post\Edit;
+use Blog\Http\Requests\Post\Index;
+use Blog\Http\Requests\Post\Show;
+use Blog\Http\Requests\Post\Store;
+use Blog\Http\Requests\Post\Update;
 use Illuminate\Http\Request;
-use blog\Http\Requests\CreatepostRequest;
+use Blog\Http\Requests\CreatepostRequest;
 
 use Auth;
-use blog\User;
-use blog\Term;
-use blog\Post;
-use blog\Notifications\PostNofification;
+use Blog\User;
+use Blog\Term;
+use Blog\Post;
+use Blog\Notifications\PostNofification;
 
 class PostController extends Controller
 {

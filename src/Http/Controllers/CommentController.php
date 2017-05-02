@@ -1,18 +1,18 @@
 <?php
 
-namespace blog\Http\Controllers;
+namespace Blog\Http\Controllers;
 
-use blog\Http\Requests\Comment\Create;
-use blog\Http\Requests\Comment\Edit;
-use blog\Http\Requests\Comment\Index;
-use blog\Http\Requests\Comment\Show;
-use blog\Http\Requests\Comment\Store;
-use blog\Http\Requests\Comment\Update;
+use Blog\Http\Requests\Comment\Create;
+use Blog\Http\Requests\Comment\Edit;
+use Blog\Http\Requests\Comment\Index;
+use Blog\Http\Requests\Comment\Show;
+use Blog\Http\Requests\Comment\Store;
+use Blog\Http\Requests\Comment\Update;
 use Illuminate\Http\Request;
 
 use Auth;
-use blog\Comment;
-use blog\Post;
+use Blog\Comment;
+use Blog\Post;
 class CommentController extends Controller
 {
     /**

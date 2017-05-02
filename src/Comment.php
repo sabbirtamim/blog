@@ -1,6 +1,6 @@
 <?php
 
-namespace blog;
+namespace Blog;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -53,24 +53,24 @@ class Comment extends Model
      */
     public function user()
     {
-        return $this->belongsTo('blog\User');
+        return $this->belongsTo('Blog\User');
     }
 	/**
      * Get the user that owns the Term.
      */
     public function post()
     {
-        return $this->belongsTo('blog\Post');
+        return $this->belongsTo('Blog\Post');
     }
 	/**
      * Get the user that owns the Term.
      */
     public function parent()
     {
-        return $this->belongsTo('blog\Comment','id');
+        return $this->belongsTo('Blog\Comment','id');
     }
     public function childcomment()
     {
-        return $this->hasMany('blog\Comment','id');
+        return $this->hasMany('Blog\Comment','id');
     }
 }

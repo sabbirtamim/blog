@@ -1,18 +1,18 @@
 <?php
 
-namespace blog\Http\Controllers;
+namespace Blog\Http\Controllers;
 
-use blog\Http\Requests\Term\Create;
-use blog\Http\Requests\Term\Edit;
-use blog\Http\Requests\Term\Index;
-use blog\Http\Requests\Term\Show;
-use blog\Http\Requests\Term\Store;
-use blog\Http\Requests\Term\Update;
+use Blog\Http\Requests\Term\Create;
+use Blog\Http\Requests\Term\Edit;
+use Blog\Http\Requests\Term\Index;
+use Blog\Http\Requests\Term\Show;
+use Blog\Http\Requests\Term\Store;
+use Blog\Http\Requests\Term\Update;
 use Illuminate\Http\Request;
-use blog\Http\Requests\CreateTermRequest;
+use Blog\Http\Requests\CreateTermRequest;
 
 use Auth;
-use blog\Term;
+use Blog\Term;
 class Termcontroller extends Controller
 {
 	/**

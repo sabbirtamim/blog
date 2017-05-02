@@ -1,6 +1,6 @@
 <?php
 
-namespace blog\Http\Requests\Term;
+namespace Blog\Http\Requests\Term;
 
 use Illuminate\Foundation\Http\FormRequest;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace blog;
+namespace Blog;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -40,41 +40,41 @@ class User extends Authenticatable
      */
     public function terms_type()
     {
-        return $this->hasMany('blog\Terms_type');
+        return $this->hasMany('Blog\Terms_type');
     }
     /**
      * Get the term for the user.
      */
     public function term()
     {
-        return $this->hasMany('blog\Term');
+        return $this->hasMany('Blog\Term');
     }
     /**
      * Get the post for the user.
      */
     public function post()
     {
-        return $this->hasMany('blog\Post');
+        return $this->hasMany('Blog\Post');
     }
     /**
      * Get the comment for the user.
      */
     public function comment()
     {
-        return $this->hasMany('blog\Comment');
+        return $this->hasMany('Blog\Comment');
     }
     /**
      * Get the comment for the user.
      */
     public function comment_parent()
     {
-        return $this->hasMany('blog\Comment','parent_id');
+        return $this->hasMany('Blog\Comment','parent_id');
     }
     /**
      * The roles that belong to the user.
      */
     public function userRole()
     {
-        return $this->hasMany('blog\UserRole');
+        return $this->hasMany('Blog\UserRole');
     }
 }

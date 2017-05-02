@@ -1,6 +1,6 @@
 <?php
 
-namespace blog;
+namespace Blog;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -16,7 +16,7 @@ class Role extends Model
      */
     public function userRole()
     {
-        return $this->hasMany('blog\UserRole');
+        return $this->hasMany('Blog\UserRole');
     }
     public function setDescriptionAttribute($value)
     {

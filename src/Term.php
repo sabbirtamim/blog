@@ -1,6 +1,6 @@
 <?php
 
-namespace blog;
+namespace Blog;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -42,14 +42,14 @@ public static function boot()
      */
     public function user()
     {
-        return $this->belongsTo('blog\User');
+        return $this->belongsTo('Blog\User');
     }
     /**
      * Get the post for the user.
      */
     // public function post()
     // {
-    //     return $this->hasMany('blog\Post');
+    //     return $this->hasMany('Blog\Post');
     // }
 //     public function setSlugAttribute($slug){
 //     $this->slug = $slug;

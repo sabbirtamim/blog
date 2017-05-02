@@ -1,0 +1,29 @@
+{
+    "name": "sabbirtamim/blog",
+    "type": "library",
+    "description": "This is a Laravel blog pakage",
+    "keywords": ["Laravel","BLOG"],
+    "homepage": "https://github.com/sabbirtamim/blog",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sabbir Hossain",
+            "email": "sabbirh87@gmail.com",
+            "homepage": "http://blog.webtrillions.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.6",
+        "laravel/framework": ">=5.4.1"
+        
+    },
+    "require-dev":{
+        
+    },
+    "autoload": {
+     "psr-4": {
+            "Blog\\": "src"
+        }
+    }
+}

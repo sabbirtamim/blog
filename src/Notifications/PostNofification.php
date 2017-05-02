@@ -1,12 +1,12 @@
 <?php
 
-namespace blog\Notifications;
+namespace Blog\Notifications;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
-use blog\Post;
+use Blog\Post;
 class PostNofification extends Notification
 {
     use Queueable;

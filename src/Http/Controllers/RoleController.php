@@ -1,18 +1,18 @@
 <?php
 
-namespace blog\Http\Controllers;
+namespace Blog\Http\Controllers;
 
-use blog\Http\Requests\Role\Create;
-use blog\Http\Requests\Role\Edit;
-use blog\Http\Requests\Role\Index;
-use blog\Http\Requests\Role\Show;
-use blog\Http\Requests\Role\Store;
-use blog\Http\Requests\Role\Update;
+use Blog\Http\Requests\Role\Create;
+use Blog\Http\Requests\Role\Edit;
+use Blog\Http\Requests\Role\Index;
+use Blog\Http\Requests\Role\Show;
+use Blog\Http\Requests\Role\Store;
+use Blog\Http\Requests\Role\Update;
 use Illuminate\Http\Request;
 
 use Auth;
-use blog\Role;
-use blog\UserRole;
+use Blog\Role;
+use Blog\UserRole;
 class RoleController extends Controller
 {
     /**

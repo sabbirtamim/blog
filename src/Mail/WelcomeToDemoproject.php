@@ -1,7 +1,7 @@
 <?php
 
-namespace blog\Mail;
-use blog\User;
+namespace Blog\Mail;
+use Blog\User;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;

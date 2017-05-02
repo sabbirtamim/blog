@@ -1,6 +1,6 @@
 <?php
 
-namespace blog;
+namespace Blog;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -17,13 +17,13 @@ class UserRole extends Model
      */
     public function user()
     {
-        return $this->belongsTo('blog\User');
+        return $this->belongsTo('Blog\User');
     }
     /**
      * Get the comment for the user.
      */
     public function role()
     {
-        return $this->belongsTo('blog\Role');
+        return $this->belongsTo('Blog\Role');
     }
 }

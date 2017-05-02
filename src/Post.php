@@ -1,6 +1,6 @@
 <?php
 
-namespace blog;
+namespace Blog;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
@@ -77,7 +77,7 @@ class Post extends Model
      */
     public function user()
     {
-        return $this->belongsTo('blog\User');
+        return $this->belongsTo('Blog\User');
     }
 
     /**
@@ -85,21 +85,21 @@ class Post extends Model
      */
     public function term()
     {
-        return $this->belongsToMany('blog\Term');
+        return $this->belongsToMany('Blog\Term');
     }
     /**
      * Get the user that owns the Term.
      */
     // public function terms_type()
     // {
-    //     return $this->belongsTo('blog\Terms_type');
+    //     return $this->belongsTo('Blog\Terms_type');
     // }
     /**
      * Get the comment for the user.
      */
     public function comment()
     {
-        return $this->hasMany('blog\Comment');
+        return $this->hasMany('Blog\Comment');
     }
 
     public function manageUpload(Request $request)
