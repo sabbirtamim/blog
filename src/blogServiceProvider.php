@@ -12,11 +12,11 @@ use Illuminate\Support\ServiceProvider;
 
 
 /**
- * Description of LaraCrudServiceProvider
+ * Description of BlogServiceProvider
  *
  * @author Tuhin
  */
-class LaraCrudServiceProvider extends ServiceProvider
+class BlogServiceProvider extends ServiceProvider
 {
     protected $defer = true;
     /**
@@ -34,7 +34,7 @@ class LaraCrudServiceProvider extends ServiceProvider
         ], 'config');
          $this->loadMigrationsFrom(__DIR__ . '/database/migrations');
          $this->loadViewsFrom(__DIR__ . '/../resources/views', 'blog'); 
-        $this->loadRoutesFrom(__DIR__ . 'routes/web.php'); 
+        $this->loadRoutesFrom(__DIR__ . '/routes/web.php'); 
 
 
     }
