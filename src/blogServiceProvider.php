@@ -5,7 +5,7 @@
  * and open the template in the editor.
  */
 
-namespace blog;
+namespace Blog;
 
 use Illuminate\Contracts\Events\Dispatcher as DispatcherContract;
 use Illuminate\Support\ServiceProvider;
@@ -32,7 +32,6 @@ class LaraCrudServiceProvider extends ServiceProvider
         return $this->publishes([
             __DIR__ . '/config/blog.php' => config_path('blog.php')
         ], 'config');
-         $this->loadMigrationsFrom(__DIR__ . '/database/migrations'); 
          $this->loadMigrationsFrom(__DIR__ . '/database/migrations');
          $this->loadViewsFrom(__DIR__ . '/../resources/views', 'blog'); 
         $this->loadRoutesFrom(__DIR__ . 'routes/web.php'); 
@@ -50,11 +49,11 @@ class LaraCrudServiceProvider extends ServiceProvider
             $this->commands($this->commands);
 
             $this->publishes([
-                __DIR__ . '/resources/views' => resource_path('views')
+                __DIR__ . '/../resources/views' => resource_path('views')
             ], 'blog-views');
 
             $this->publishes([
-                __DIR__ . '/resources/assets' => public_path('')
+                __DIR__ . '/../resources/assets' => public_path('')
             ], 'blog-views');
 
         }
