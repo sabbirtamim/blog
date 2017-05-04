@@ -25,7 +25,7 @@ Route::group(['middleware' => 'auth'], function () {
     #adminlte_routes
 });
 
-Auth::routes();
+// Auth::routes();
 // use App\User;
 Route::get('/home', 'HomeController@index');
 Route::resource('terms', 'TermController');

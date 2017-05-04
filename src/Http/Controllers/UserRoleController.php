@@ -24,7 +24,7 @@ class UserRoleController extends Controller
     public function index(Index $request)
     {
         $UserRoles = UserRole::paginate(10);
-        return view('UserRoles.index')->with('data', $UserRoles);
+        return view('blog.UserRoles.index')->with('data', $UserRoles);
     }
 
     /**
@@ -36,7 +36,7 @@ class UserRoleController extends Controller
     {
         $user = User::get();
         $role = Role::all();
-        return view('userRoles.create')->with('user', $user)->with('role', $role);
+        return view('blog.userRoles.create')->with('user', $user)->with('role', $role);
     }
 
     /**
@@ -78,7 +78,7 @@ class UserRoleController extends Controller
     {
         $user = User::get();
         $role = Role::all();
-        return view('userRoles.edit')->with('data', $UserRole);
+        return view('blog.userRoles.edit')->with('data', $UserRole);
     }
 
     /**

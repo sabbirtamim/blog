@@ -18,7 +18,7 @@ use Illuminate\Support\ServiceProvider;
  */
 class BlogServiceProvider extends ServiceProvider
 {
-    protected $defer = true;
+    // protected $defer = true;
     /**
      * List of command which will be registered.
      * @var array
@@ -29,7 +29,7 @@ class BlogServiceProvider extends ServiceProvider
     public function boot()
     {
 
-        return $this->publishes([
+         $this->publishes([
             __DIR__ . '/config/blog.php' => config_path('blog.php')
         ], 'config');
          $this->loadMigrationsFrom(__DIR__ . '/database/migrations');

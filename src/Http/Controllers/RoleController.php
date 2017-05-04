@@ -23,7 +23,7 @@ class RoleController extends Controller
     public function index(Index $request)
     {
         $roles = Role::paginate(10);
-        return view('roles.index')->with('data', $roles);
+        return view('blog.roles.index')->with('data', $roles);
     }
 
     /**
@@ -34,7 +34,7 @@ class RoleController extends Controller
     public function create()
     {
         // $term = Term::all();
-        return view('roles.create');
+        return view('blog.roles.create');
     }
 
     /**
@@ -74,7 +74,7 @@ class RoleController extends Controller
      */
     public function edit(Edit $request, Role $role)
     {
-        return view('roles.edit')->with('data', $role);
+        return view('blog.roles.edit')->with('data', $role);
     }
 
     /**
