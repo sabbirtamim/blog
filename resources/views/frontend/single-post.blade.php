@@ -1,7 +1,4 @@
-<?php 
-
- ?>
-@extends('layouts.front-app')
+@extends('blog::layouts.front-app')
 
 
 @section('content')
