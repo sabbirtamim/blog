@@ -1,6 +1,6 @@
 <?php
 
-use Blog\Seeders\DatabaseTableSeeder;
+namespace Blog\Seeders;
 use Illuminate\Database\Seeder;
 
 class DatabaseTableSeeder extends Seeder

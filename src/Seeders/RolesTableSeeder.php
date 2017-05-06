@@ -1,5 +1,5 @@
 <?php
-
+namespace Blog\Seeders;
 use Illuminate\Database\Seeder;
 use Blog\Role;
 
@@ -20,6 +20,6 @@ class RolesTableSeeder extends Seeder
         //     'name' => 'user',
         //     'description' => 'User'
         // ]);
-        factory(Blog\Role::class, 10)->create();        
+        factory(\Blog\Role::class, 10)->create();        
     }
 }

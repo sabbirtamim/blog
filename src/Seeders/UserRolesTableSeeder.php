@@ -1,5 +1,5 @@
 <?php
-
+namespace Blog\Seeders;
 use Illuminate\Database\Seeder;
 use Blog\UserRole;
 
@@ -12,6 +12,6 @@ class UserRolesTableSeeder extends Seeder
      */
     public function run()
     {        
-        factory(Blog\UserRole::class, 10)->create();
+        factory(\Blog\UserRole::class, 10)->create();
     }
 }

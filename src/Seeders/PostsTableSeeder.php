@@ -1,5 +1,5 @@
 <?php
-
+namespace Blog\Seeders;
 use Illuminate\Database\Seeder;
 use Blog\Post;
 
@@ -12,6 +12,6 @@ class PostsTableSeeder extends Seeder
      */
     public function run()
     {        
-        factory(Blog\Post::class, 10)->create();
+        factory(\Blog\Post::class, 10)->create();
     }
 }

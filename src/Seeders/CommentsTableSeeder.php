@@ -1,7 +1,7 @@
 <?php
-
+namespace Blog\Seeders;
 use Illuminate\Database\Seeder;
-use Blog\Comment;
+// use Blog\Comment;
 
 class CommentsTableSeeder extends Seeder
 {
@@ -12,6 +12,6 @@ class CommentsTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(Blog\Comment::class, 10)->create();
+        factory(\Blog\Comment::class, 10)->create();
     }
 }
