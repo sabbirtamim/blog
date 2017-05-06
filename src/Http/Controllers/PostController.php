@@ -32,20 +32,20 @@ class PostController extends Controller
     public function index(Index $request)
     {
         $posts = Post::paginate(10);
-        return view('blog.posts.index')->with('data', $posts);
+        return view('blog::posts.index')->with('data', $posts);
     }
 
     public function show(Show $request, $slug)
     {
         $data = Post::GetPostBySlug($slug)->get();
-        return view('blog.posts.show')->with('data', $data);
+        return view('blog::posts.show')->with('data', $data);
     }
 
 
     public function create(Create $request)
     {
         $term = Term::all();
-        return view('blog.posts.create')->with('term', $term);
+        return view('blog::posts.create')->with('term', $term);
     }
 
     public function store(Store $request)
@@ -74,7 +74,7 @@ class PostController extends Controller
     public function edit(Edit $request, Post $post)
     {
         $terms = Term::all();
-        return view('blog.posts.edit')->with('data', $post)->with('terms', $terms);
+        return view('blog::posts.edit')->with('data', $post)->with('terms', $terms);
     }
 
     public function update(Update $request, Post $post)
@@ -111,11 +111,11 @@ class PostController extends Controller
     public function frontShow(Index $request)
     {
         $posts = Post::paginate(10);
-        return view('blog.frontend.blog-post')->with('data', $posts);
+        return view('blog::frontend.blog-post')->with('data', $posts);
     }
         public function singlePost(Show $request, $post_slug)
     {
         $data = Post::GetPostBySlug($post_slug)->get();
-        return view('blog.frontend.single-post')->with('data', $data);
+        return view('blog::frontend.single-post')->with('data', $data);
     }
 }

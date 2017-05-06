@@ -29,9 +29,9 @@ class BlogServiceProvider extends ServiceProvider
     public function boot()
     {
 
-        //  $this->publishes([
-        //     __DIR__ . '/config/blog.php' => config_path('blog.php')
-        // ], 'config');
+         $this->publishes([
+            __DIR__ . '/config/blog.php' => config_path('blog.php')
+        ], 'config');
          $this->loadMigrationsFrom(__DIR__ . '/database/migrations');
          $this->loadViewsFrom(__DIR__ . '/../resources/views', 'blog'); 
         $this->loadRoutesFrom(__DIR__ . '/routes/web.php'); 

@@ -27,20 +27,20 @@ class Termcontroller extends Controller
     public function index(Index $request)
     {
         $terms = Term::paginate(10);
-        return view('blog.terms.index')->with('data', $terms);
+        return view('blog::terms.index')->with('data', $terms);
     }
 
     public function show(Show $request, $slug)
     {
         $data = Term::GetTermBySlug($slug)->get();
-        return view('blog.terms.show')->with('data', $data);
+        return view('blog::terms.show')->with('data', $data);
     }
 
 
     public function create(Create $request)
     {
         $term = Term::all();
-        return view('blog.terms.create')->with('term', $term);
+        return view('blog::terms.create')->with('term', $term);
     }
 
     public function store(Store $request)
@@ -59,7 +59,7 @@ class Termcontroller extends Controller
     public function edit(Edit $request, Term $term)
     {
         $terms = Term::all();
-        return view('blog.terms.edit')->with('data', $term)->with('terms', $terms);
+        return view('blog::terms.edit')->with('data', $term)->with('terms', $terms);
     }
 
     public function update(Update $request, Term $term)
