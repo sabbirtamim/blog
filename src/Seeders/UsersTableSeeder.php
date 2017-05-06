@@ -1,6 +1,7 @@
 <?php
 namespace Blog\Seeders;
 use Illuminate\Database\Seeder;
+use Blog\User;
 
 class UsersTableSeeder extends Seeder
 {
@@ -11,7 +12,7 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(\Blog\User::class, 10)->create();
+        factory(User::class, 10)->create();
         
         // User::create(
         //     [

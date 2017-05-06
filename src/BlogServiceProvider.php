@@ -37,6 +37,7 @@ class BlogServiceProvider extends ServiceProvider
         $this->loadRoutesFrom(__DIR__ . '/routes/web.php'); 
 
 
+    
     }
 
     public function register()
@@ -44,7 +45,7 @@ class BlogServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(
             __DIR__ . '/config/blog.php', 'blog'
         );
-
+$this->app->make('Illuminate\Database\Eloquent\Factory')->load(__DIR__ . '/factories');
         if ($this->app->runningInConsole()) {
             $this->commands($this->commands);
 
