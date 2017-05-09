@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class Post extends Model
 {
     const THUMBNAIL_PATH = 'img';
-    const STATUS_PUBLISHED = 0;
+    // const STATUS_PUBLISHED = 0;
     const STATUS_DRAFT = 'draft';
     const STATUS_PENDING = 'pending';
     const STATUS_SCHEDULED = 'scheduled';
@@ -16,7 +16,7 @@ class Post extends Model
     protected $table = 'posts';
 
     protected $fillable = [
-        'user_id', 'content', 'title', 'status', 'slug', 'comment_status', 'active','term_id',
+        'user_id', 'content', 'title','publish_at', 'status', 'slug', 'comment_status', 'active','term_id',
     ];
 
     public static function boot()
@@ -29,9 +29,9 @@ class Post extends Model
                 $model->user_id = auth()->user()->id;
             }
 
-            if (empty($model->status)) {
-                $model->status = static::STATUS_PUBLISHED;
-            }
+            // if (empty($model->status)) {
+            //     $model->status = static::STATUS_PUBLISHED;
+            // }
 
         });
 
@@ -45,7 +45,7 @@ class Post extends Model
             $this->attributes['slug']=str_slug($this->title);
         }
     }
-
+    
     public function setContentAttribute($value)
     {
         $this->attributes['content'] = htmlspecialchars($value);
@@ -117,6 +117,16 @@ class Post extends Model
         if ($request->term_id) {
         $comma_separated = (is_array($request->term_id))?implode(",", $request->term_id):$request->term_id;
             $this->term_id = $comma_separated;
+        }
+        return false;
+    }
+
+    public function manageStatus(Request $request)
+    {
+        if (!$request->publish_at==$request->updated_at) {
+            $this->status = '0';
+        }else{
+            $this->status = '1';
         }
         return false;
     }

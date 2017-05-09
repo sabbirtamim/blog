@@ -1,4 +1,4 @@
-@extends('blog::layouts.admin.template')
+@extends('layouts.admin.template')
 @section('content')
     <div class="">
         <div class="row">

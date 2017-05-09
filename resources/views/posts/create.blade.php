@@ -1,4 +1,4 @@
-@extends('blog::layouts.admin.template')
+@extends('layouts.admin.template')
 
 
 @section('content')
@@ -34,6 +34,19 @@
                                 @endif
                                 <span class="glyphicon form-control-feedback"></span>
                             </div>
+                            <div class="form-group has-feedback">
+                                <label for="datepicker" class="col-md-4 control-label">Publish Date *</label>
+                                <input type="date" class="form-control" id="datepicker" placeholder="Post publish at" name="publish_at"
+                                       value="{{ old('publish_at') }}"/>
+
+                                @if ($errors->has('publish_at'))
+                                    <span class="help-block">
+                                            <strong>{{ $errors->first('publish_at') }}</strong>
+                                        </span>
+                                @endif
+                                <span class="glyphicon form-control-feedback"></span>
+                            </div>
+                            
 
                             <div class="form-group has-feedback">
                                 <label for="slug" class="col-md-4 control-label">Slug *</label>
@@ -70,15 +83,6 @@
 
                                 <input id="post_thumb" type="file" name="post_thumb" accept="jpeg/jpg/png*"
                                        value="">
-                            </div>
-                            <div class="form-group has-feedback">
-                                <input type="checkbox" name="status" id="active_status" value="0"> Hidden post
-                                @if ($errors->has('status'))
-                                    <span class="help-block">
-                                            <strong>{{ $errors->first('status') }}</strong>
-                                        </span>
-                                @endif
-                                <span class="glyphicon  form-control-feedback"></span>
                             </div>
                             <div class="form-group has-feedback">
                                 <input type="checkbox" name="comment_status" id="active_status" value="0"> Comment

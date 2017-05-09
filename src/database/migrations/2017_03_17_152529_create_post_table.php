@@ -17,9 +17,10 @@ class CreatePostTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->string('content');
+            $table->TIMESTAMP('publish_at');
             $table->string('thumb_url')->nullable()->unique();
             $table->string('title');
-            $table->string('status')->default(0);
+            $table->string('status');
             $table->string('slug')->unique();
             $table->string('comment_status')->default(0);
             $table->integer('active')->default(0);

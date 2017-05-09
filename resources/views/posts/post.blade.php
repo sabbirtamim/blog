@@ -1,4 +1,4 @@
-@extends('blog::adminlte::layouts.app')
+@extends('adminlte::layouts.app')
 
 @section('htmlheader_title')
     {{ trans('adminlte_lang::message.home') }}

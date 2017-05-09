@@ -1,4 +1,4 @@
-@extends('blog::layouts.admin.template')
+@extends('layouts.admin.template')
 
 
 @section('content')
@@ -38,6 +38,23 @@
                                 @if ($errors->has('title'))
                                     <span class="help-block">
                                             <strong>{{ $errors->first('title') }}</strong>
+                                        </span>
+                                @endif
+                                <span class="glyphicon form-control-feedback"></span>
+                            </div>
+                            <div class="form-group has-feedback">
+                            <?php $user = Auth::user();
+                            echo $user->id; ?>
+                                <label for="datepicker" class="col-md-3 control-label">Publish Date *: </label>
+                                <label for="datepicker" class="col-md-4 control-label">{{ $data->publish_at }}</label>
+                                </br>
+                                <label for="datepicker" class="col-md-12 control-label">Change Publish Date * </label>
+                                <input type="date" class="form-control" id="datepicker" placeholder="" name="publish_at"
+                                       value=""/>
+
+                                @if ($errors->has('publish_at'))
+                                    <span class="help-block">
+                                            <strong>{{ $errors->first('publish_at') }}</strong>
                                         </span>
                                 @endif
                                 <span class="glyphicon form-control-feedback"></span>
@@ -84,22 +101,7 @@
 
                                 <input id="post_thumb" type="file" name="post_thumb" accept="jpeg/jpg/png*"
                                        value="">
-                            </div>
-                            <div class="form-group has-feedback">
-                                    @if($data->status=="0") 
-                                <input type="checkbox" name="status" id="active_status" value="0" >  Hidden post 
-                                    @elseif($data->status=="1") 
-                                <input type="checkbox" name="status" id="active_status" value="1" checked>  Hidden post 
-                                    @endif
-
-                                    @if ($errors->has('status'))
-                                        <span class="help-block">
-                                            <strong>{{ $errors->first('status') }}</strong>
-                                        </span>
-                                    @endif
-                                    <span class="glyphicon  form-control-feedback"></span>
-                                </div>
-                                <div class="form-group has-feedback">
+                            </div>                                <div class="form-group has-feedback">
                                     @if($data->comment_status=="0") 
                                 <input type="checkbox" name="comment_status" id="active_status" value="0" >  Comment Off  
                                     @elseif($data->comment_status=="1") 

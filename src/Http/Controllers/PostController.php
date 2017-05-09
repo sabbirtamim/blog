@@ -32,20 +32,20 @@ class PostController extends Controller
     public function index(Index $request)
     {
         $posts = Post::paginate(10);
-        return view('blog::posts.index')->with('data', $posts);
+        return view('posts.index')->with('data', $posts);
     }
 
     public function show(Show $request, $slug)
     {
         $data = Post::GetPostBySlug($slug)->get();
-        return view('blog::posts.show')->with('data', $data);
+        return view('posts.show')->with('data', $data);
     }
 
 
     public function create(Create $request)
     {
         $term = Term::all();
-        return view('blog::posts.create')->with('term', $term);
+        return view('posts.create')->with('term', $term);
     }
 
     public function store(Store $request)
@@ -54,9 +54,10 @@ class PostController extends Controller
         $post->fill($request->all());
         $post->manageTerm($request);
         $post->manageUpload($request);
+        $post->manageStatus($request);
         $post->comment_status = $request->get('comment_status', 0);
         $post->active = $request->get('active', 0);
-        $post->status = $request->get('status', Post::STATUS_PUBLISHED);
+        // $post->status = $request->get('status', Post::STATUS_PUBLISHED);
 
         if ($post->save()) {
                     $user=User::all();
@@ -74,7 +75,7 @@ class PostController extends Controller
     public function edit(Edit $request, Post $post)
     {
         $terms = Term::all();
-        return view('blog::posts.edit')->with('data', $post)->with('terms', $terms);
+        return view('posts.edit')->with('data', $post)->with('terms', $terms);
     }
 
     public function update(Update $request, Post $post)
@@ -84,9 +85,10 @@ class PostController extends Controller
 
         $post->manageTerm($request);
         $post->manageUpload($request);
+        $post->manageStatus($request);
         $post->comment_status = $request->get('comment_status', 0);
         $post->active = $request->get('active', 0);
-        $post->status = $request->get('status', Post::STATUS_PUBLISHED);
+        // $post->status = $request->get('status', Post::STATUS_PUBLISHED);
 
         if ($post->save()) {
             return redirect()->back()->with('response_message', 'Your data updated succesfully')->with('result', 'alert-success');
@@ -111,11 +113,11 @@ class PostController extends Controller
     public function frontShow(Index $request)
     {
         $posts = Post::paginate(10);
-        return view('blog::frontend.blog-post')->with('data', $posts);
+        return view('frontend.blog-post')->with('data', $posts);
     }
         public function singlePost(Show $request, $post_slug)
     {
         $data = Post::GetPostBySlug($post_slug)->get();
-        return view('blog::frontend.single-post')->with('data', $data);
+        return view('frontend.single-post')->with('data', $data);
     }
 }
