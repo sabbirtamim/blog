@@ -56,8 +56,8 @@ class BlogServiceProvider extends ServiceProvider
         );
         $this->app->make('Illuminate\Database\Eloquent\Factory')->load(__DIR__ . '/factories');
         $this->commands('command.post.publish');
-        $this->app->make(__DIR__ .'tests') . '/PostTest.php';
-        $this->app->make(__DIR__ .'tests') . '/UserTest.php';
+        $this->app->make(__DIR__ .'/tests') . '/PostTest.php';
+        $this->app->make(__DIR__ .'/tests') . '/UserTest.php';
         if ($this->app->runningInConsole()) {
             $this->commands($this->commands);
 
