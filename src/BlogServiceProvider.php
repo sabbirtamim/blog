@@ -45,7 +45,9 @@ class BlogServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(
             __DIR__ . '/config/blog.php', 'blog'
         );
-$this->app->make('Illuminate\Database\Eloquent\Factory')->load(__DIR__ . '/factories');
+        $this->app->make('Illuminate\Database\Eloquent\Factory')->load(__DIR__ . '/factories');
+        $this->app->make('path.tests') . '/PostTest.php';
+        $this->app->make('path.tests') . '/UserTest.php';
         if ($this->app->runningInConsole()) {
             $this->commands($this->commands);
 

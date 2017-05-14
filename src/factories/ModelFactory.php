@@ -12,22 +12,20 @@
 */
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-$factory->define(\Blog\User::class, function (Faker\Generator $faker) {
-    static $password;
-    static $gender;
 
-    return [
+$factory->define(Blog\User::class, function (Faker\Generator $faker) {
+        return [
         'first_name' => $faker->firstName,
         'gender' => $faker->text,
         'last_name' => $faker->lastName,
         'username' => $faker->unique()->username,
         'email' => $faker->unique()->safeEmail,
-        'password' => $password ?: $password = bcrypt('secret'),
+        'password' =>  bcrypt('secret'),
         'phone_number' => $faker->phoneNumber,
         'remember_token' => str_random(10),
     ];
 });
-$factory->define(\Blog\Role::class, function (Faker\Generator $faker) {
+$factory->define(Blog\Role::class, function (Faker\Generator $faker) {
     
 
     return [
@@ -36,7 +34,7 @@ $factory->define(\Blog\Role::class, function (Faker\Generator $faker) {
         'remember_token' => str_random(10),
     ];
 });
-$factory->define(\Blog\UserRole::class, function (Faker\Generator $faker) {
+$factory->define(Blog\UserRole::class, function (Faker\Generator $faker) {
     
 
     return [
@@ -45,7 +43,7 @@ $factory->define(\Blog\UserRole::class, function (Faker\Generator $faker) {
         'remember_token' => str_random(10),
     ];
 });
-$factory->define(\Blog\Term::class, function (Faker\Generator $faker) {
+$factory->define(Blog\Term::class, function (Faker\Generator $faker) {
     
 
     return [
@@ -57,7 +55,7 @@ $factory->define(\Blog\Term::class, function (Faker\Generator $faker) {
         'remember_token' => str_random(10),
     ];
 });
-$factory->define(\Blog\Post::class, function (Faker\Generator $faker) {
+$factory->define(Blog\Post::class, function (Faker\Generator $faker) {
     
 
     return [
@@ -69,7 +67,7 @@ $factory->define(\Blog\Post::class, function (Faker\Generator $faker) {
         'remember_token' => str_random(10),
     ];
 });
-$factory->define(\Blog\Comment::class, function (Faker\Generator $faker) {
+$factory->define(Blog\Comment::class, function (Faker\Generator $faker) {
     
 
     return [
