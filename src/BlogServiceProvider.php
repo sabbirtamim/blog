@@ -55,9 +55,9 @@ class BlogServiceProvider extends ServiceProvider
             __DIR__ . '/config/blog.php', 'blog'
         );
         $this->app->make('Illuminate\Database\Eloquent\Factory')->load(__DIR__ . '/factories');
-        $this->commands('command.eternaltree.install');
-        $this->app->make('tests') . '/PostTest.php';
-        $this->app->make('tests') . '/UserTest.php';
+        $this->commands('command.post.publish');
+        $this->app->make(__DIR__ .'tests') . '/PostTest.php';
+        $this->app->make(__DIR__ .'tests') . '/UserTest.php';
         if ($this->app->runningInConsole()) {
             $this->commands($this->commands);
 
