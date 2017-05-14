@@ -6,7 +6,7 @@
  */
 
 namespace Blog;
-
+use Blog\Console\Commands;
 use Illuminate\Contracts\Events\Dispatcher as DispatcherContract;
 use Illuminate\Support\ServiceProvider;
 
@@ -39,6 +39,15 @@ class BlogServiceProvider extends ServiceProvider
 
     
     }
+    protected function registerCommands()
+        {
+            $this->registerInstallCommand();
+        }
+
+    protected function registerInstallCommand()
+    {
+        $this->commands('command.post.publish');
+    }
 
     public function register()
     {
@@ -46,8 +55,9 @@ class BlogServiceProvider extends ServiceProvider
             __DIR__ . '/config/blog.php', 'blog'
         );
         $this->app->make('Illuminate\Database\Eloquent\Factory')->load(__DIR__ . '/factories');
-        $this->app->make('path.tests') . '/PostTest.php';
-        $this->app->make('path.tests') . '/UserTest.php';
+        $this->commands('command.eternaltree.install');
+        $this->app->make('tests') . '/PostTest.php';
+        $this->app->make('tests') . '/UserTest.php';
         if ($this->app->runningInConsole()) {
             $this->commands($this->commands);
 
