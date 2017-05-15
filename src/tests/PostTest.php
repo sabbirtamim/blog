@@ -4,7 +4,7 @@ namespace Blog\tests;
 use App;
 use Artisan;
 use Config;
-use App\User;
+use Blog\User;
 use Illuminate\Contracts\Console\Kernel;
 use Illuminate\Support\Facades\Hash;
 

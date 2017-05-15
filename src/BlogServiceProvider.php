@@ -8,6 +8,7 @@
 namespace Blog;
 use Blog\Console\PublishPost;
 use Blog\tests\PostTest;
+use Blog\tests\UserTest;
 use Illuminate\Contracts\Events\Dispatcher as DispatcherContract;
 use Illuminate\Support\ServiceProvider;
 
