@@ -6,7 +6,8 @@
  */
 
 namespace Blog;
-use Blog\Console\Commands;
+use Blog\Console\PublishPost;
+use Blog\tests\PostTest;
 use Illuminate\Contracts\Events\Dispatcher as DispatcherContract;
 use Illuminate\Support\ServiceProvider;
 
@@ -24,6 +25,7 @@ class BlogServiceProvider extends ServiceProvider
      * @var array
      */
     protected $commands = [
+        PublishPost::class,
     ];
 
     public function boot()
@@ -36,17 +38,6 @@ class BlogServiceProvider extends ServiceProvider
          $this->loadViewsFrom(__DIR__ . '/../resources/views', 'blog'); 
         $this->loadRoutesFrom(__DIR__ . '/routes/web.php'); 
 
-
-    
-    }
-    protected function registerCommands()
-        {
-            $this->registerInstallCommand();
-        }
-
-    protected function registerInstallCommand()
-    {
-        $this->commands('command.post.publish');
     }
 
     public function register()
@@ -54,10 +45,9 @@ class BlogServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(
             __DIR__ . '/config/blog.php', 'blog'
         );
-        $this->app->make('Illuminate\Database\Eloquent\Factory')->load(__DIR__ . '/factories');
-        $this->commands('command.post.publish');
-        $this->app->make(__DIR__ .'/tests') . '/PostTest.php';
-        $this->app->make(__DIR__ .'/tests') . '/UserTest.php';
+        $this->app->make('Illuminate\Database\Eloquent\Factory')->load(__DIR__ . '/factories');   
+        $this->app->make('Blog\tests\PostTest');
+        $this->app->make('Blog\tests\UserTest');
         if ($this->app->runningInConsole()) {
             $this->commands($this->commands);
 

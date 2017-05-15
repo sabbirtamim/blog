@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Unit;
+namespace Blog\tests;
 use App;
 use Artisan;
 use Config;
