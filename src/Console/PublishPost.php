@@ -1,6 +1,6 @@
 <?php
 
-namespace Blog\Console\Commands;
+namespace Blog\Console;
 
 use Illuminate\Console\Command;
 use Blog\post;
